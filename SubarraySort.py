@@ -20,11 +20,11 @@ def findUnsortedSubarray(nums):
     if minunsort == float("inf"):
         return 0
     subl, subr = 0, len(nums) - 1
-    while minunsort >= nums[subl]:
+    while minunsort >= nums[subl]: # This one finds the index of the leftmost unsorted number, i.e., the maxunsort position by ignoring numbers less than or equal to minunsort
         subl += 1
-    while maxunsort <= nums[subr]:
+    while maxunsort <= nums[subr]: # Same as last while loop but inverted
         subr -= 1
-    answer = subr - subl + 1
+    answer = subr - subl + 1 # since subr is the position of minunsort, we need to add 1 to get the real length between both unsorted numbers' position
     return answer
 
 
